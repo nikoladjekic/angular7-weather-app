@@ -1,0 +1,10 @@
+.table {
+    width: 60%;
+    margin-top: 5px;
+    margin-left: 20%;
+    text-align: center;
+}
+
+.col-md-3 {
+    width: 0;
+}

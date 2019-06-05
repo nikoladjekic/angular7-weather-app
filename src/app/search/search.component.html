@@ -1,0 +1,35 @@
+<div class="text-center">
+
+  <h6 style="color:rgb(218,4,4)"> {{cityNamePlaceholder}} </h6>
+  <input type="text" size="100px" class="form-control edit" placeholder="Enter city name" aria-label="EnterCityName"
+    [(ngModel)]="searchCity" aria-describedby="basic-addon2" (keydown)="onKeydown($event)">
+  <br>
+  <button class="btn btn-primary left-btn" (click)="search()">Show weather</button>
+  <button class="btn btn-primary" (click)="saveCity(searchCity)">Save to list</button>
+
+  <br><br>
+
+  <table class="table table-hover table-striped">
+    <tbody>
+      <tr *ngFor='let w of city; let i=index'>
+        <td class="col-md-3 col-xs-4">
+          <h2>{{w.city}}</h2>
+        </td>      
+        <td class="col-md-2 col-xs-3">
+          <h3>{{w.temp}} &#8451;</h3>
+        </td>
+        <td class="col-md-4 col-xs-3">
+          <h4>{{w.description}}</h4>
+        </td>
+        <td class="col-md-1 col-xs-1">
+          <img src="{{ w.icon }}">
+        </td>
+        <td class="col-md-1 col-xs-1">
+          <button class="btn btn-warning" (click)='del(i)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

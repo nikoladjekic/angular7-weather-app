@@ -1,0 +1,16 @@
+
+<div class="text-center">
+  <p *ngIf="!weather.city"><i class="fas fa-circle-notch fa-spin fa-lg"></i><br>Loading data...</p>
+</div>
+
+<div *ngIf="weather.city" class="text-center">
+  <h1> {{ weather.city }}, {{ weather.country }} </h1>
+  <h2> {{ weather.temp }} &#8451; </h2>
+  <img src="{{ weather.icon }}" alt="weather icon">
+  <h3> {{ weather.description }} </h3>
+  <h4> wind speed: {{ weather.wind }} m/s</h4>
+  <h4> air humidity: {{ weather.humidity }}%</h4>
+  <br>
+  <h6>{{ weather.time}} </h6>
+</div>
+
